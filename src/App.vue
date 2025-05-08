@@ -33,6 +33,7 @@ const newTask = ref('')
 const tasks = ref([])
 const filter = ref('all')
 
+
 const initialTasks = [
   { text: 'Belajar Vue.js', completed: false },
   { text: 'Kerjakan tugas PBK', completed: true },
