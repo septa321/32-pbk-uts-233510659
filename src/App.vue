@@ -26,12 +26,22 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import './style.css'
 
 const newTask = ref('')
 const tasks = ref([])
 const filter = ref('all')
+
+const initialTasks = [
+  { text: 'Belajar Vue.js', completed: false },
+  { text: 'Kerjakan tugas PBK', completed: true },
+  { text: 'Baca dokumentasi GitHub', completed: false }
+]
+
+onMounted(() => {
+  tasks.value = [...initialTasks]
+})
 
 function addTask() {
   if (newTask.value.trim()) {
@@ -59,3 +69,4 @@ const filteredTasks = computed(() => {
   }
 })
 </script>
+
